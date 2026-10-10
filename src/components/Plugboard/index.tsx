@@ -19,6 +19,10 @@ export default function Plugboard({ plugboardPairs, setPlugboardPairs }: plugboa
       newState.splice(index, 1)
       setPlugboardPairs(newState)
     }
+
+    // TODO: validar que no se repitan letras ya usadas.
+    // Si se ingresa un par, por ejemplo 'AB', se debe validar que ni A ni B estén en otro par.
+    
   }
 
   return (

@@ -16,15 +16,32 @@ export function App() {
   const [plugboardPairs, setPlugboardPairs] = useState<string[]>([])
 
   const [encryptedText, setEncryptedText] = useState("")
-  const rotor1 = useRotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ", "Q")
-  const rotor2 = useRotor("AJDKSIRUXBLHWTMCQGZNPYFVOE", "E")
-  const rotor3 = useRotor("BDFHJLCPRTXVZNYEIWGAKMUSQO", "V")
+
+  const rotor1 = useRotor()
+  const rotor2 = useRotor()
+  const rotor3 = useRotor()
 
   useEffect(() => {
     if (selectedRotors.length === 3) {
-      // TODO: construir rotores.
+      rotor1.createRotor(
+        selectedRotors[0].wiring,
+        selectedRotors[0].notch,
+        letterToIndex(initialState[0])
+      )
+      rotor2.createRotor(
+        selectedRotors[1].wiring,
+        selectedRotors[1].notch,
+        letterToIndex(initialState[1])
+      )
+      rotor3.createRotor(
+        selectedRotors[2].wiring,
+        selectedRotors[2].notch,
+        letterToIndex(initialState[2])
+      )
+
     }
   }, [selectedRotors, initialState])
+
 
   const encrypt = () => {
     let encryptedText = ""
