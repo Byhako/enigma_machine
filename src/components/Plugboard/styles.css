@@ -1,0 +1,36 @@
+.plugboard {
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+
+  h3 {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+
+.plugboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  justify-content: center;
+  margin-top: 15px;
+
+  input {
+    background: #202530;
+    color: white;
+    border: 1px solid #5d7896;
+    padding: 5px;
+    width: 60px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 4px;
+  }
+}
