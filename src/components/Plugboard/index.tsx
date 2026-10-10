@@ -20,9 +20,14 @@ export default function Plugboard({ plugboardPairs, setPlugboardPairs }: plugboa
       setPlugboardPairs(newState)
     }
 
-    // TODO: validar que no se repitan letras ya usadas.
-    // Si se ingresa un par, por ejemplo 'AB', se debe validar que ni A ni B estén en otro par.
-    
+    const lastPair = plugboardPairs[index]
+    const values = plugboardPairs.join('').slice(0, -2)
+
+    if (values.includes(lastPair[0]) || values.includes(lastPair[1])) {
+      let newState = [...plugboardPairs]
+      newState.splice(index, 1)
+      setPlugboardPairs(newState)
+    }
   }
 
   return (
@@ -33,7 +38,9 @@ export default function Plugboard({ plugboardPairs, setPlugboardPairs }: plugboa
         {Array.from({ length: 12 }).map((_, i) => (
           <input
             key={i}
+            id={`plugboard-${i}`}
             type="text"
+            maxLength={2}
             value={plugboardPairs[i] || ""}
             onInput={(e: Event) => {
               const target = e.currentTarget as HTMLInputElement;

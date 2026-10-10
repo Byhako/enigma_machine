@@ -7,6 +7,7 @@ import Rotors from './components/Rotors'
 import Display from './components/Display'
 import Plugboard from './components/Plugboard'
 import type { Rotor } from './types'
+import { replaceTextBackward, replaceTextForward } from './utils/replaceText'
 
 
 export function App() {
@@ -38,7 +39,6 @@ export function App() {
         selectedRotors[2].notch,
         letterToIndex(initialState[2])
       )
-
     }
   }, [selectedRotors, initialState])
 
@@ -46,10 +46,10 @@ export function App() {
   const encrypt = () => {
     let encryptedText = ""
 
-    // TODO: reemplazar inputText con plugboardPairs
+    const text = replaceTextForward(inputText, plugboardPairs)
 
-    for (let i = 0; i < inputText.length; i++) {
-      let char = inputText[i]
+    for (let i = 0; i < text.length; i++) {
+      let char = text[i]
       let charIndex = letterToIndex(char.toUpperCase())
 
       let rotor1Index = rotor1.forward(charIndex)
@@ -69,14 +69,12 @@ export function App() {
       rotor2.step()
       rotor3.step()
     }
-    setEncryptedText(encryptedText)
+    setEncryptedText(replaceTextBackward(encryptedText, plugboardPairs))
   }
 
   const reset = () => {
     window.location.reload()
   }
-
-  console.log(selectedRotors, initialState)
 
   return (
     <>
