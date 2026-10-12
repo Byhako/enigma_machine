@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
 import { useRotor } from './hooks/useRotor'
-import { letterToIndex } from './utils/letterToIndex'
 import { reflector } from './utils/reflector'
 
 import Rotors from './components/Rotors'
@@ -8,6 +7,7 @@ import Display from './components/Display'
 import Plugboard from './components/Plugboard'
 import type { Rotor } from './types'
 import { replaceTextBackward, replaceTextForward } from './utils/replaceText'
+import { charToIndex, indexToChar } from './utils/utils'
 
 
 export function App() {
@@ -27,17 +27,17 @@ export function App() {
       rotor1.createRotor(
         selectedRotors[0].wiring,
         selectedRotors[0].notch,
-        letterToIndex(initialState[0])
+        charToIndex(initialState[0])
       )
       rotor2.createRotor(
         selectedRotors[1].wiring,
         selectedRotors[1].notch,
-        letterToIndex(initialState[1])
+        charToIndex(initialState[1])
       )
       rotor3.createRotor(
         selectedRotors[2].wiring,
         selectedRotors[2].notch,
-        letterToIndex(initialState[2])
+        charToIndex(initialState[2])
       )
     }
   }, [selectedRotors, initialState])
@@ -50,7 +50,7 @@ export function App() {
 
     for (let i = 0; i < text.length; i++) {
       let char = text[i]
-      let charIndex = letterToIndex(char.toUpperCase())
+      let charIndex = charToIndex(char.toUpperCase())
 
       let rotor1Index = rotor1.forward(charIndex)
       let rotor2Index = rotor2.forward(rotor1Index)
@@ -62,7 +62,7 @@ export function App() {
       let rotor2BackwardIndex = rotor2.backward(rotor3BackwardIndex)
       let rotor1BackwardIndex = rotor1.backward(rotor2BackwardIndex)
 
-      let encryptedChar = String.fromCharCode(65 + rotor1BackwardIndex)
+      let encryptedChar = indexToChar(rotor1BackwardIndex)
       encryptedText += encryptedChar
 
       rotor1.step()

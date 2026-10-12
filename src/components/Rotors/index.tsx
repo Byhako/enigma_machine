@@ -5,11 +5,11 @@ import ContentRotors from './ContentRotors'
 
 
 const rotors: Rotor[] = [
-  { id: 1, name: "I", wiring: 'EKMFLGDQVZNTOWYHXUSPAIBRCJ', notch: 'Q' },
-  { id: 2, name: "II", wiring: 'AJDKSIRUXBLHWTMCQGZNPYFVOE', notch: 'E' },
-  { id: 3, name: "III", wiring: 'BDFHJLCPRTXVZNYEIWGAKMUSQO', notch: 'V' },
-  { id: 4, name: "IV", wiring: 'QAZWSXEDCRFVTGBYHNUJMIKOLP', notch: 'J' },
-  { id: 5, name: "V", wiring: 'ZPXOCIVUBYTMRLEKWJQHAGSDFN', notch: 'Z' },
+  { id: 1, name: "I", wiring: 'EK MFLGDQVZNT.OWYHXUSPAIBRCJ', notch: 'Q' },
+  { id: 2, name: "II", wiring: 'AJDKSIRUXBLHWTMCQG ZN.PYFVOE', notch: 'E' },
+  { id: 3, name: "III", wiring: 'BD FHJLCPRTXVZNYEIW.GAKMUSQO', notch: 'V' },
+  { id: 4, name: "IV", wiring: 'QAZWS XEDCRF.VTGBYHNUJMIKOLP', notch: 'J' },
+  { id: 5, name: "V", wiring: 'Z PXOCIVUBYTMRLEKWJQHAGSD.FN', notch: 'Z' },
 ]
 
 type RotorsProps = {

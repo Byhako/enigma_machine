@@ -2,6 +2,7 @@ export function replaceTextForward(text: string, plugboardPairs: string[]) {
 
   const dic = plugboardPairs.reduce((objeto: Record<string, string>, elemento: string) => {
     objeto[elemento[0]] = elemento[1]
+    objeto[elemento[1]] = elemento[0]
     return objeto
   }, {})
 
@@ -21,6 +22,7 @@ export function replaceTextBackward(text: string, plugboardPairs: string[]) {
 
   const dic = plugboardPairs.reduce((objeto: Record<string, string>, elemento: string) => {
     objeto[elemento[1]] = elemento[0]
+    objeto[elemento[0]] = elemento[1]
     return objeto
   }, {})
 
