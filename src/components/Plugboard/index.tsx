@@ -5,16 +5,23 @@ type plugboardProps = {
   setPlugboardPairs: (plugboardPairs: string[]) => void
 }
 
+const regex = /^[A-Za-z0-9]+$/;
+
 export default function Plugboard({ plugboardPairs, setPlugboardPairs }: plugboardProps) {
 
   const handleChange = (index: number, value: string) => {
     let newState = [...plugboardPairs]
-    newState[index] = value.slice(-2).toUpperCase()
+    newState[index] = value.slice(-2)
     setPlugboardPairs(newState)
   }
 
   const handleBlur = (index: number) => {
-    if (!plugboardPairs[index] || plugboardPairs[index].trim() === '' || plugboardPairs[index].length !== 2) {
+    if (
+      !plugboardPairs[index] ||
+      plugboardPairs[index].trim() === '' ||
+      plugboardPairs[index].length !== 2 ||
+      !regex.test(plugboardPairs[index])
+    ) {
       let newState = [...plugboardPairs]
       newState.splice(index, 1)
       setPlugboardPairs(newState)

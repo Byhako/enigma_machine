@@ -1,11 +1,11 @@
 import { useState } from "preact/hooks"
 import type { Rotor } from "../types"
-import { charToIndex, indexToChar } from "../utils/utils"
+import { charMap, charToIndex, indexToChar } from "../utils/utils"
 
 export function useRotor() {
-
   const [position, setPosition] = useState(0)
   const [rotor, setRotor] = useState<Rotor | null>(null)
+  const alphabetSize = charMap.length
 
   function createRotor(
     wiring: string,
@@ -23,25 +23,25 @@ export function useRotor() {
   function forward(charIndex: number) {
     if (!rotor) return -1
 
-    const mappedIndex = (charIndex + position) % 28
+    const mappedIndex = (charIndex + position) % alphabetSize
     const outputChar = rotor.wiring[mappedIndex]
-    const outputIndex = (charToIndex(outputChar) - position + 28) % 28
+    const outputIndex = (charToIndex(outputChar) - position + alphabetSize) % alphabetSize
     return outputIndex
   }
 
   function backward(charIndex: number) {
     if (!rotor) return -1
-    const mappedIndex = (charIndex + position) % 28
+    const mappedIndex = (charIndex + position) % alphabetSize
     const targetChar = indexToChar(mappedIndex)
     const foundIndex = rotor.wiring.indexOf(targetChar)
-    const outputIndex = (foundIndex - position + 28) % 28
+    const outputIndex = (foundIndex - position + alphabetSize) % alphabetSize
     return outputIndex
   }
 
   function step() {
     if (!rotor) return -1
 
-    const newPosition = (position + 1) % 28
+    const newPosition = (position + 1) % alphabetSize
     setPosition(newPosition)
     return indexToChar(newPosition) === rotor.notch
   }

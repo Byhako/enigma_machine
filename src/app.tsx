@@ -50,7 +50,7 @@ export function App() {
 
     for (let i = 0; i < text.length; i++) {
       let char = text[i]
-      let charIndex = charToIndex(char.toUpperCase())
+      let charIndex = charToIndex(char)
 
       let rotor1Index = rotor1.forward(charIndex)
       let rotor2Index = rotor2.forward(rotor1Index)

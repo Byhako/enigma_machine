@@ -6,16 +6,22 @@ type ContentRotorsProps = {
   setInitialState: (initialState: string[]) => void
 }
 
+const regex = /^[A-Za-z]+$/;
+
 export default function ContentRotors({ selectedRotors, initialState, setInitialState }: ContentRotorsProps) {
 
   const handleChange = (rotorIndex: number, char: string) => {
     let newState = [...initialState]
-    newState[rotorIndex] = char.slice(-1).toUpperCase()
+    newState[rotorIndex] = char.slice(-1)
     setInitialState(newState)
   }
 
   const handleBlur = (rotorIndex: number) => {
-    if (!initialState[rotorIndex] || initialState[rotorIndex].trim() === '') {
+    if (
+      !initialState[rotorIndex] ||
+      initialState[rotorIndex].trim() === '' ||
+      !regex.test(initialState[rotorIndex])
+    ) {
       let newState = [...initialState]
       newState[rotorIndex] = 'A'
       setInitialState(newState)

@@ -1,0 +1,6 @@
+export const wiring1 = "ARlML5mT2hP7V8owQrUZ. KdFSsIj4BpWuX3nNCk01y6xiDJbYvOztq9EaegHcfG"
+export const wiring2 = "fP0V4zpNSK13ARt.xj9YXGqeZBdvH5hrabliE6LTgWFnwucyOIkJC8m7U2Ds MQo"
+export const wiring3 = "ehZbVAkLz7R6dcmugqspG9F8nojMwTxaE4iIPSCKlH3DJ52XOYvQN0rWyB1 ftU."
+export const wiring4 = "hJ362YQwTcPnDKgsvi.ZNSbERfrjAouVWUeX91Lp tFMdyx0Olm8qC74BI5aHkzG"
+export const wiring5 = "aZcoQuUTnGLd920et5.jphmgWsxr1f8XI6bYHyq7CElVvRwJkOBNPMA iD34KFzS"
+export const wiring6 = "0Q4MEYecBCFX7uWO.zhroLAnKxamDSR3HV1ZwbvgjdsTlf26G5kUJ pIPt9qyN8i"

@@ -1,41 +1,6 @@
 
-export const reflectorB = [20, 19, 24, 22, 16, 15, 14, 18, 25, 17, 26, 21, 27, 23, 6, 5, 4, 9, 7, 1, 0, 11, 3, 13, 2, 8, 10, 12]
+export const reflectorB = [48, 63, 45, 37, 36, 39, 51, 32, 33, 57, 44, 43, 62, 35, 54, 40, 60, 50, 58, 34, 52, 61, 47, 38, 41, 55, 53, 59, 42, 49, 56, 46, 7, 8, 19, 13, 4, 3, 23, 5, 15, 24, 28, 11, 10, 2, 31, 22, 0, 29, 17, 6, 20, 26, 14, 25, 30, 9, 18, 27, 16, 21, 12, 1]
 
 export function reflector(charIndex: number) {
   return reflectorB[charIndex]
-}
-
-
-function generateReflector(size = 28) {
-  if (size % 2 !== 0) throw new Error("El tamaño debe ser un número par.");
-
-  const half = size / 2;
-  const firstHalf = Array.from({ length: half }, (_, i) => i);
-  const secondHalf = Array.from({ length: half }, (_, i) => i + half);
-
-  // Barajamos la segunda mitad para que las parejas sean aleatorias
-  for (let i = secondHalf.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [secondHalf[i], secondHalf[j]] = [secondHalf[j], secondHalf[i]];
-  }
-
-  // Aseguramos que ningún elemento se refleje a sí mismo (que i no apunte a i)
-  for (let i = 0; i < half; i++) {
-    if (firstHalf[i] === secondHalf[i]) {
-      // Si coinciden, lo intercambiamos con el vecino de al lado
-      const swapIndex = (i + 1) % half;
-      [secondHalf[i], secondHalf[swapIndex]] = [secondHalf[swapIndex], secondHalf[i]];
-    }
-  }
-
-  // Construimos el array de mapeo final de tamaño 'size'
-  const wiring = new Array(size);
-  for (let i = 0; i < half; i++) {
-    const a = firstHalf[i];
-    const b = secondHalf[i];
-    wiring[a] = b;
-    wiring[b] = a; // Simetría bidireccional perfecta
-  }
-
-  return wiring;
 }
