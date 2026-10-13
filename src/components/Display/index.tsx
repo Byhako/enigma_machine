@@ -13,7 +13,7 @@ export default function Display({ inputText, setInputText, encryptedText, encryp
 
   const handleChange = (e: Event) => {
     const target = e.currentTarget as HTMLInputElement;
-    const sanitizedValue = target.value.replace(/[^A-Za-z0-9 .]/g, "")
+    const sanitizedValue = target.value.replace(/[^A-Z .a-z0-9+\-*=#$%&()@[\]{}<>_!¡¿?]/g, "")
     setInputText(sanitizedValue)
   }
 
