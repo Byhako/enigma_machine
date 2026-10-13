@@ -1,14 +1,23 @@
 # ⚙️ Extended Enigma Machine
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://byhako.github.io/enigma_machine/)
+
 An interactive, modern simulation of the historical World War II Enigma cipher machine, built with **Preact**, **TypeScript**, and **Vite**. 
 
 While the original electromechanical Enigma machine was restricted strictly to the 26 uppercase Latin letters, this extended implementation dramatically expands the cryptographic alphabet to **86 characters**, supporting **uppercase, lowercase, numbers, spaces, punctuation, and mathematical/special symbols (`+-*=#$%&()@[]{}<>_!¡¿?`)**.
 
 ---
 
+## 🌐 Live Demo
+
+Experience and test the machine directly in your browser:  
+👉 **[https://byhako.github.io/enigma_machine/](https://byhako.github.io/enigma_machine/)**
+
+---
+
 ## 📸 Preview
 
-![Enigma Machine Simulator](./image.png)
+[![Enigma Machine Simulator](./image.png)](https://byhako.github.io/enigma_machine/)
 
 ---
 
