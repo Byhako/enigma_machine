@@ -1,9 +1,9 @@
+export const charMap = "ABCDEFGHIJKLMNOPQRSTUVWXYZ .abcdefghijklmnopqrstuvwxyz0123456789+-*=#$%&()@[]{}<>_!¡¿?"
+
 export function charToIndex(char: string) {
-  if (char === ' ') return 26
-  return char.charCodeAt(0) - 65
+  return charMap.indexOf(char)
 }
 
 export function indexToChar(index: number) {
-  if (index === 26) return ' '
-  return String.fromCharCode(index + 65)
+  return charMap[index]
 }

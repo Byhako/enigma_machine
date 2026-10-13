@@ -1,8 +1,6 @@
 
-export const reflectorB = "YRUHQSLDPXNGOKMIEBFZCWVJAT"
+export const reflectorB = [81, 50, 68, 75, 45, 72, 64, 74, 83, 76, 56, 53, 61, 43, 79, 73, 48, 60, 63, 47, 77, 80, 59, 84, 49, 58, 46, 82, 70, 62, 51, 54, 67, 66, 69, 78, 52, 55, 71, 85, 57, 65, 44, 13, 42, 4, 26, 19, 16, 24, 1, 30, 36, 11, 31, 37, 10, 40, 25, 22, 17, 12, 29, 18, 6, 41, 33, 32, 2, 34, 28, 38, 5, 15, 7, 3, 9, 20, 35, 14, 21, 0, 27, 8, 23, 39]
 
 export function reflector(charIndex: number) {
-  const outputChar = reflectorB[charIndex]
-  const outputIndex = (outputChar.charCodeAt(0) - 65 + 26) % 26
-  return outputIndex
+  return reflectorB[charIndex]
 }

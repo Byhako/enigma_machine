@@ -1,3 +1,34 @@
+.rotors-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background: #616573;
+  padding: 15px;
+  max-width: fit-content;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
+}
+
+
+.content-rotors {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  @media (max-width: 850px) {
+    margin-top: 20px;
+  }
+}
+
+
 .rotors {
   width: 100%;
   display: flex;
@@ -14,6 +45,11 @@
   justify-content: space-between;
   gap: 10px;
   margin-right: 15px;
+
+  @media (max-width: 850px) {
+    margin-right: 0;
+    width: 100%;
+  }
 }
 
 .rotor-selection {
@@ -22,7 +58,12 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  max-width: 190px;
+  width: 185px;
+
+  @media (max-width: 850px) {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .rotor-selection-item {
@@ -46,6 +87,10 @@
 
 .spacer {
   width: 10px;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 }
 
 .rotor-name {
@@ -90,4 +135,33 @@
     text-align: center;
     border-radius: 4px;
   }
+}
+
+.rotor-image {
+  height: 150px;
+
+  @media (max-width: 500px) {
+    height: 100px;
+  }
+}
+
+.rotor-selection-item .hidden-input {
+  display: none;
+}
+
+.checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #384455;
+}
+
+.rotor-selection-item input:checked+.checkmark {
+  background-color: #579465;
+  border: 1px solid #579465;
 }

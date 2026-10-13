@@ -10,6 +10,13 @@ type DisplayProps = {
 }
 
 export default function Display({ inputText, setInputText, encryptedText, encrypt, disabled, reset }: DisplayProps) {
+
+  const handleChange = (e: Event) => {
+    const target = e.currentTarget as HTMLInputElement;
+    const sanitizedValue = target.value.replace(/[^A-Z .a-z0-9+\-*=#$%&()@[\]{}<>_!¡¿?]/g, "")
+    setInputText(sanitizedValue)
+  }
+
   return (
     <section class="display">
       <h2 class="subtitle">Operation</h2>
@@ -37,10 +44,7 @@ export default function Display({ inputText, setInputText, encryptedText, encryp
             spellcheck={false}
             value={inputText}
             rows={3}
-            onInput={(e: Event) => {
-              const target = e.currentTarget as HTMLInputElement;
-              setInputText(target.value.toUpperCase());
-            }}
+            onInput={handleChange}
             placeholder="Enter text to encrypt/decrypt..."
           />
         </div>
