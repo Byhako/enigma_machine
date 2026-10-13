@@ -8,6 +8,10 @@
   border: 2px solid #ddd;
   border-radius: 10px;
 
+  @media (max-width: 690px) {
+    max-width: fit-content;
+  }
+
   h3 {
     font-weight: 500;
     font-size: 16px;

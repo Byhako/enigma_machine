@@ -29,14 +29,14 @@ export default function ContentRotors({ selectedRotors, initialState, setInitial
   }
 
   return (
-    <>
+    <div class="content-rotors">
       <div class="rotor-container">
         <h3 class={`subtitle2 ${selectedRotors[0] ? '' : 'rotor-error'}`} style="text-align: center;">
           Slot 1
           <span class="rotor-id">( Rotor {selectedRotors[0]?.name || '?'} )</span>
         </h3>
         <div class="rotor-controls">
-          <img src="rotor.png" alt="rotor" height="150px" />
+          <img src="rotor.png" alt="rotor" class="rotor-image" />
           <label>
             Rotor Position
             <input
@@ -60,7 +60,7 @@ export default function ContentRotors({ selectedRotors, initialState, setInitial
           <span class="rotor-id">( Rotor {selectedRotors[1]?.name || '?'} )</span>
         </h3>
         <div class="rotor-controls">
-          <img src="rotor.png" alt="rotor" height="150px" />
+          <img src="rotor.png" alt="rotor" class="rotor-image" />
           <label>
             Rotor Position
             <input
@@ -84,7 +84,7 @@ export default function ContentRotors({ selectedRotors, initialState, setInitial
           <span class="rotor-id">( Rotor {selectedRotors[2]?.name || '?'} )</span>
         </h3>
         <div class="rotor-controls">
-          <img src="rotor.png" alt="rotor" height="150px" />
+          <img src="rotor.png" alt="rotor" class="rotor-image" />
           <label>
             Rotor Position
             <input
@@ -99,6 +99,6 @@ export default function ContentRotors({ selectedRotors, initialState, setInitial
           </label>
         </div>
       </div>
-    </>
+    </div>
   )
 }

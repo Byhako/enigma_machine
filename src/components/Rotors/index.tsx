@@ -34,7 +34,7 @@ export default function Rotors({ selectedRotors, setSelectedRotors, initialState
     <section class="rotors">
       <h2 class="subtitle">Rotor Configuration</h2>
 
-      <div class="content">
+      <div class="rotors-container">
         <RotorSelect
           rotors={rotors}
           selectedRotors={selectedRotors}
