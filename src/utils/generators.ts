@@ -33,7 +33,7 @@ export function generateReflector(size = 28) {
   return wiring;
 }
 
-export function generateRotorWiring(characterPool) {
+export function generateRotorWiring(characterPool: string) {
   // Convertimos el string o array de caracteres en un arreglo mutable
   let chars = typeof characterPool === 'string' ? characterPool.split('') : [...characterPool];
 

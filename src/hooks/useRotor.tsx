@@ -1,10 +1,10 @@
 import { useState } from "preact/hooks"
-import type { Rotor } from "../types"
+import type { RotorInit } from "../types"
 import { charMap, charToIndex, indexToChar } from "../utils/utils"
 
 export function useRotor() {
   const [position, setPosition] = useState(0)
-  const [rotor, setRotor] = useState<Rotor | null>(null)
+  const [rotor, setRotor] = useState<RotorInit | null>(null)
   const alphabetSize = charMap.length
 
   function createRotor(
